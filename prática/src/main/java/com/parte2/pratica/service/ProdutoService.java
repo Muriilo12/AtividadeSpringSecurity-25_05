@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service // Marca a classe como camada de serviço (regras de negócio)
 public class ProdutoService {
 
-    @Autowired
+    @Autowired //Inejeta o ProdutoRepository automaticamente
     private ProdutoRepository produtoRepository;
 
     public List<ProdutoModel> findAll(){

@@ -8,11 +8,11 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Controller;
 
-@Controller
-@EnableWebSecurity
+@Controller //Marca a classe como um controller do Spring
+@EnableWebSecurity //Ativa as configurações de segurança
 public class SecurityFilter {
 
-    @Bean
+    @Bean //Informa ao Spring que o metodo retorna um objeto que deve ser gerenciado pelo container
     public SecurityFilterChain securityFilterChain(HttpSecurity htpp){
         return htpp.csrf( csrf -> csrf.disable())
                 .sessionManagement( session-> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

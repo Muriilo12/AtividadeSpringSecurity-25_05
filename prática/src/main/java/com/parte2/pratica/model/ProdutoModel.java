@@ -6,12 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Data
-@Entity
+@Data //Gera automaticamente getters, setters, toString (Lombok)
+@Entity //Diz que a classe representa uma tabela no banco de dados
 public class ProdutoModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //Marca o campo como chave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //GeneratedValue o ID é gerado automaticamente pelo banco
     private Long id;
     private String nome;
 
